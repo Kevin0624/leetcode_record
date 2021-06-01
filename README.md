@@ -2,7 +2,7 @@
 
 ## Linked List
 
-### 1290 Convert Binary Number in a Linked list to Integer
+### 1290. Convert Binary Number in a Linked list to Integer
 
 my solution
 * time complexity: O(n)
@@ -42,5 +42,44 @@ int getDecimalValue(struct ListNode* head){
     }
     
     return temp;
+}
+```
+### 876. Middle of the Linked List
+```c=
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+
+struct ListNode* middleNode(struct ListNode* head){
+    
+    struct ListNode *ptr = head;
+    struct ListNode *ptr2 = head;
+    int counter = 0;
+    int counter_2 = 0;
+    int target = 0;
+    
+    while(ptr!=NULL){
+        counter++;
+        ptr = ptr->next;
+    }
+    
+    target = (counter/2);
+    
+    while(counter_2 <= target){
+        
+        if (counter_2 == target){
+            break;
+        }
+        ptr2 = ptr2->next;
+        counter_2++;
+    }
+    
+    return ptr2;
+
 }
 ```
