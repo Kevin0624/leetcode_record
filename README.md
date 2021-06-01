@@ -45,6 +45,10 @@ int getDecimalValue(struct ListNode* head){
 }
 ```
 ### 876. Middle of the Linked List
+
+my solution
+* time complexity: O(n)
+* space complexity: O(1)
 ```c=
 /**
  * Definition for singly-linked list.
@@ -80,6 +84,68 @@ struct ListNode* middleNode(struct ListNode* head){
     }
     
     return ptr2;
+
+}
+```
+很讚的 solution
+![](https://i.imgur.com/z6cUZp7.png)
+
+# 237. Delete Node in a Linked List
+my solution
+(注意 corner case(最後一個 node))
+```c=
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+void deleteNode(struct ListNode* node) {
+    
+    struct ListNode* ptr = node;
+    struct ListNode* ptr2 = NULL;
+    
+    while(ptr->next != NULL){
+        
+            ptr->val = (ptr->next)->val;
+            ptr2 = (ptr->next)->next;
+            
+            if (ptr2 == NULL){
+                ptr->next = NULL;
+                break;
+            }
+            ptr = ptr->next;   
+    }
+    
+}
+```
+# 206. Reverse Linked List
+Destcription: Given the head of a singly linked list, reverse the list, and return the reversed list.
+```c=
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     struct ListNode *next;
+ * };
+ */
+
+
+struct ListNode* reverseList(struct ListNode* head){
+    
+    struct ListNode* previous = NULL;
+    struct ListNode* current = head;
+    struct ListNode* preceding = NULL;
+    
+    while(current != NULL){
+        preceding = current->next;
+        current->next = previous;
+        previous = current;
+        current = preceding;
+    }
+    
+    return previous;
 
 }
 ```
