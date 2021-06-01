@@ -6,6 +6,7 @@
 
 my solution
 * time complexity: O(n)
+* space complexity: O(1)
 ```c=
 /**
  * Definition for singly-linked list.
@@ -16,8 +17,6 @@ my solution
  */
 
 // 想法 : 先 reverse 在 traverse
-
-
 int getDecimalValue(struct ListNode* head){
     
     struct ListNode *ptr = head;
