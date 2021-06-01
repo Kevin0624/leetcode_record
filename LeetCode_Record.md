@@ -1,4 +1,4 @@
-# LeetCode Record
+# README
 
 ## Linked List
 
